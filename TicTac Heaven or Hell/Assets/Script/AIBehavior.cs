@@ -26,34 +26,34 @@ public class AIBehavior : MonoBehaviour
             {
                 // check if player is abt to win
                 //if -1 skip over
-                if (winningSpot != -1 && b.cells[winningSpot]._button.interactable)
+                if (winningSpot != -1 && b.tiles[winningSpot]._button.interactable)
                 {
-                    b.cells[winningSpot].AI_FillCell();
+                    b.tiles[winningSpot].AI_FillCell();
                 }
                 else
                 {
                     //check for an empty cell
-                    b.cells[b.getEmptyCell()].AI_FillCell();
+                    b.tiles[b.getEmptyCell()].AI_FillCell();
                 }
             }
             else
             {
-                if (b.cells[myStrat.locations[aiTurnNumber]]._button.interactable)
+                if (b.tiles[myStrat.locations[aiTurnNumber]]._button.interactable)
                 {
-                    b.cells[myStrat.locations[aiTurnNumber]].AI_FillCell();
+                    b.tiles[myStrat.locations[aiTurnNumber]].AI_FillCell();
                     aiTurnNumber++;
                 }
                 else
                 {
                     //check if player is abt to win
-                    if(winningSpot != -1 && b.cells[winningSpot]._button.interactable)
+                    if(winningSpot != -1 && b.tiles[winningSpot]._button.interactable)
                     {
-                        b.cells[winningSpot].AI_FillCell();
+                        b.tiles[winningSpot].AI_FillCell();
                     }
                     else
                     {
                         //check for an empty cell
-                        b.cells[b.getEmptyCell()].AI_FillCell();
+                        b.tiles[b.getEmptyCell()].AI_FillCell();
                     }
                 }
             }

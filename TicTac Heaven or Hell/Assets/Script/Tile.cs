@@ -4,7 +4,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Cell : MonoBehaviour
+public class Tile : MonoBehaviour
 {
     public TextMeshProUGUI _text;
     public Button _button;

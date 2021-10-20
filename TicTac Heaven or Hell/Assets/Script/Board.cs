@@ -5,27 +5,27 @@ using UnityEngine;
 public class Board : MonoBehaviour
 {
 
-    public List<Cell> cells;
+    public List<Tile> tiles;
     [SerializeField] GameObject cellPrefab;
     [SerializeField] int gridSize = 3;
 
 
     public void buildBoard()
     {
-        cells = new List<Cell>();
+        tiles = new List<Tile>();
         for (int i = 0; i < (gridSize*gridSize); i++)
         {
-            GameObject c = Instantiate(cellPrefab, transform);
-            cells.Add(c.GetComponent<Cell>());
+            GameObject t = Instantiate(cellPrefab, transform);
+            tiles.Add(t.GetComponent<Tile>());
         }
     }
 
     public void ResetBoard()
     {
-        foreach(Cell c in cells)
+        foreach(Tile t in tiles)
         {
-            c._text.text = "";
-            c._button.interactable = true;
+            t._text.text = "";
+            t._button.interactable = true;
         }
     }
 
@@ -126,26 +126,26 @@ public class Board : MonoBehaviour
 
     public int getEmptyCell()
     {
-        List<int> emptyCells = new List<int>();
+        List<int> emptytiles = new List<int>();
 
-        for(int i = 0; i < cells.Count;i++)
+        for(int i = 0; i < tiles.Count;i++)
         {
-            if(cells[i]._button.interactable)
+            if(tiles[i]._button.interactable)
             {
-                emptyCells.Add(i);
+                emptytiles.Add(i);
             }
         }
-        int randNum = Random.Range(0, emptyCells.Count);
+        int randNum = Random.Range(0, emptytiles.Count);
 
-        return emptyCells[randNum];
+        return emptytiles[randNum];
 
     }
 
     public bool CheckForTie()
     {
-        for (int i = 0; i < cells.Count; i++)
+        for (int i = 0; i < tiles.Count; i++)
         {
-            if (cells[i]._button.interactable)
+            if (tiles[i]._button.interactable)
             {
                 return false;
             }
@@ -156,8 +156,8 @@ public class Board : MonoBehaviour
 
     bool CheckValues(int i, int n)
     {
-        string a = cells[i]._text.text;
-        string b = cells[n]._text.text;
+        string a = tiles[i]._text.text;
+        string b = tiles[n]._text.text;
 
         if (string.IsNullOrEmpty(a) || string.IsNullOrEmpty(b)) return false;
 
