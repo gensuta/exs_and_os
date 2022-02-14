@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00a6973559cf7804782a37af0cbe2501, type: 3}
+  m_Name: FullPool
+  m_EditorClassIdentifier: 
+  subSkills:
+  - {fileID: 11400000, guid: 088376b82556209418c6b69994b78b1f, type: 2}
+  - {fileID: 11400000, guid: 01c5371a0a498414da071345302011f0, type: 2}
+  - {fileID: 11400000, guid: a9231a1fd34576747be5b2e896c0457d, type: 2}
+  - {fileID: 11400000, guid: 520a81eb1fb6b384392a86b6e7d15556, type: 2}
+  - {fileID: 11400000, guid: b5d1f060160f150448d9e77170d3f8c0, type: 2}
+  - {fileID: 11400000, guid: c1336f21e89e70949a4e9bc03c3c877b, type: 2}
+  - {fileID: 11400000, guid: 4a62cd566a4a63b4890d1e7a0e3734a6, type: 2}
+  - {fileID: 11400000, guid: ca5bbd23616b55d44aede80f2d5d2394, type: 2}
+  - {fileID: 11400000, guid: 542387fad26e2434f93f5dfca6211b24, type: 2}

@@ -2,17 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CharacterList : MonoBehaviour
+[CreateAssetMenu(fileName = "Character List", menuName = "SO/Character List", order = 1)]
+public class CharacterList : ScriptableObject
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    public List<Character> characters;
 }
