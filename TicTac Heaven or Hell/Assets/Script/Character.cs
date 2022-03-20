@@ -16,5 +16,17 @@ public class Character : ScriptableObject
     [TextArea(2,5)]
     public string skillDesc;
 
+    [SerializeField] int skillType; // 0 is connectfour, 1 is go...and so on
 
+    public void ActivateSkill()
+    {
+        switch(skillType)
+        {
+            case 0:
+                StateHandler.Instance.StartConnectFour();
+                break;
+            case 1:
+                break;
+        }
+    }
 }

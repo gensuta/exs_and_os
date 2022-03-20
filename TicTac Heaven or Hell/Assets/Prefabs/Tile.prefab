@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 3849196025962984545}
   - component: {fileID: 3849196025962984544}
   m_Layer: 5
-  m_Name: Cell
+  m_Name: Tile
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -121,7 +121,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 3849196025962984544}
-        m_MethodName: FillCell
+        m_MethodName: FillTile
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -143,7 +143,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f92989c51df81654eaf0e52c6ff45cfa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wasFilled: 0
+  _text: {fileID: 0}
+  _button: {fileID: 0}
+  isFilled: 0
 --- !u!1 &3849196026282784351
 GameObject:
   m_ObjectHideFlags: 0

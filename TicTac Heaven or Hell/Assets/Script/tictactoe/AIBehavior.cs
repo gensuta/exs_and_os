@@ -28,19 +28,19 @@ public class AIBehavior : MonoBehaviour
                 //if -1 skip over
                 if (winningSpot != -1 && currentBoard.tiles[winningSpot]._button.interactable)
                 {
-                    currentBoard.tiles[winningSpot].AI_FillCell();
+                    currentBoard.tiles[winningSpot].AI_FillTile();
                 }
                 else
                 {
                     //check for an empty cell
-                    currentBoard.tiles[getEmptyCell()].AI_FillCell();
+                    currentBoard.tiles[getEmptyCell()].AI_FillTile();
                 }
             }
             else
             {
                 if (currentBoard.tiles[myStrat.locations[aiTurnNumber]]._button.interactable)
                 {
-                    currentBoard.tiles[myStrat.locations[aiTurnNumber]].AI_FillCell();
+                    currentBoard.tiles[myStrat.locations[aiTurnNumber]].AI_FillTile();
                     aiTurnNumber++;
                 }
                 else
@@ -48,12 +48,12 @@ public class AIBehavior : MonoBehaviour
                     //check if player is abt to win
                     if(winningSpot != -1 && currentBoard.tiles[winningSpot]._button.interactable)
                     {
-                        currentBoard.tiles[winningSpot].AI_FillCell();
+                        currentBoard.tiles[winningSpot].AI_FillTile();
                     }
                     else
                     {
                         //check for an empty cell
-                        currentBoard.tiles[getEmptyCell()].AI_FillCell();
+                        currentBoard.tiles[getEmptyCell()].AI_FillTile();
                     }
                 }
             }

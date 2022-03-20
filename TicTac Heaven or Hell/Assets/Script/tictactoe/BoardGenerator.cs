@@ -31,8 +31,7 @@ public class BoardGenerator : MonoBehaviour
     {
         foreach (Tile t in GameHandler.Instance.board.tiles)
         {
-            t._text.text = "";
-            t._button.interactable = true;
+            t.ClearTile();
         }
     }
 }

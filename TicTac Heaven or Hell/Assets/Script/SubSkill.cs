@@ -43,6 +43,7 @@ public class SubSkill : ScriptableObject
 
     public void Activate()
     {
+        Debug.Log("Activating subskill.... " + subSkillName);
         switch(skillType)
         {
             case SkillType.Block: // block a space, block all spaces except x spaces
@@ -61,7 +62,7 @@ public class SubSkill : ScriptableObject
     }
 
 
-    void ActivateBlockSkill()
+    void ActivateBlockSkill() //TODO: IMPLEMENT
     {
         switch (tileAmount)
         {
@@ -78,7 +79,7 @@ public class SubSkill : ScriptableObject
         }
     }
 
-    void ActivateMoveSkill()
+    void ActivateMoveSkill()  //TODO: IMPLEMENT
     {
         switch (shiftType)
         {
@@ -93,7 +94,7 @@ public class SubSkill : ScriptableObject
         }
     }
 
-    void ActivateEraseSkill()
+    void ActivateEraseSkill()  //TODO: IMPLEMENT
     {
         switch (tileAmount)
         {
@@ -133,9 +134,11 @@ public class SubSkill : ScriptableObject
                 DeActivateEraseSkill();
                 break;
         }
+        turnsActive = 0;
+        Debug.Log("deactivating current skill....");
     }
 
-     void DeActivateBlockSkill()
+     void DeActivateBlockSkill()  //TODO: IMPLEMENT
     {
         switch (tileAmount)
         {
@@ -152,7 +155,7 @@ public class SubSkill : ScriptableObject
         }
     }
 
-     void DeActivateMoveSkill()
+     void DeActivateMoveSkill()  //TODO: IMPLEMENT
     {
         switch (shiftType)
         {
@@ -167,7 +170,7 @@ public class SubSkill : ScriptableObject
         }
     }
 
-     void DeActivateEraseSkill()
+     void DeActivateEraseSkill()  //TODO: IMPLEMENT
     {
         switch (tileAmount)
         {

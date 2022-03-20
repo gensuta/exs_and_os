@@ -8,11 +8,13 @@ public class CharacterManager : MonoBehaviour // TODO : Look at how subskillmana
     [SerializeField] Image characterImg;
     [SerializeField] TextMeshProUGUI characterName, skillDesc,skillName;
 
-    [SerializeField] Player player;
+    Player player;
     int index;
 
     private void Awake()
     {
+        player = Player.Instance;
+
         DisplayCharacter(player.inventory.unlockedCharacters[index]);
     }
 

@@ -9,7 +9,6 @@ public class StateHandler : MonoBehaviour
     public static event Action DialogueEnd, BattleEnd, GachaEnd;
 
     public static event Action TicTacToeMode, ConnectFourMode, GoMode;
-    // Start is called before the first frame update
 
     public static StateHandler Instance;
 

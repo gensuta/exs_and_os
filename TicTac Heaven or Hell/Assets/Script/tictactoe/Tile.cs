@@ -10,7 +10,7 @@ public class Tile : MonoBehaviour
     public TextMeshProUGUI _text;
     public Button _button;
 
-    public event Action CellFilled;
+    public event Action TileFilled;
     public bool isFilled;
 
     Board board;
@@ -27,7 +27,7 @@ public class Tile : MonoBehaviour
     {
         Init();
 
-        CellFilled += GameHandler.Instance.CheckForWinner;
+        TileFilled += GameHandler.Instance.CheckForWinner;
         StateHandler.TicTacToeMode += TicTacToeMode;
         StateHandler.ConnectFourMode += ConnectFourMode;
         StateHandler.RoundStart += RoundStart;
@@ -35,7 +35,14 @@ public class Tile : MonoBehaviour
 
     private void RoundStart()
     {
-        isFilled = false;// resets!
+        ClearTile(); // resets!
+    }
+
+    public void ClearTile()
+    {
+        _text.text = "";
+        _button.interactable = true;
+        isFilled = false;
     }
 
     private void ConnectFourMode()
@@ -53,11 +60,30 @@ public class Tile : MonoBehaviour
 
     private void OnDisable()
     {
-        CellFilled -= GameHandler.Instance.CheckForWinner;
+        TileFilled -= GameHandler.Instance.CheckForWinner;
+    }
+
+    public void FillWithString(string s)
+    {
+        _text.text = s;
+
+        if(string.IsNullOrEmpty(s))
+        {
+            _button.interactable = true;
+        }
+        else
+        {
+            _button.interactable = false;
+        }    
+    }
+
+    public string GetContent()
+    {
+        return _text.text;
     }
 
 
-    public void FillCell()
+    public void FillTile()
     {
         if (GameHandler.Instance.isSinglePlayer && !GameHandler.Instance.isPlayerOnesTurn) return;
 
@@ -68,17 +94,17 @@ public class Tile : MonoBehaviour
 
         isFilled = true;
 
-        CellFilled?.Invoke();
+        TileFilled?.Invoke();
     }
 
-    public void AI_FillCell()
+    public void AI_FillTile()
     {
         if (GameHandler.Instance.isConnectFour && !board.isTileBelowFilled(this)) return;
 
         _text.text = GameHandler.Instance.GetCurrentChar();
         _button.interactable = false;
 
-        CellFilled?.Invoke();
+        TileFilled?.Invoke();
 
         isFilled = true;
     }

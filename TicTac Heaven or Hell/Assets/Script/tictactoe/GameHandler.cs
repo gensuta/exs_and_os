@@ -2,6 +2,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
 
 public class GameHandler : MonoBehaviour
 {
@@ -23,6 +25,8 @@ public class GameHandler : MonoBehaviour
     bool switchChar;
 
     public static event Action OnNewTurn;
+
+    [SerializeField] TextMeshProUGUI scoreText;
 
 
     private void Awake()
@@ -110,13 +114,19 @@ public class GameHandler : MonoBehaviour
     {
         StateHandler.Instance.StartRound();
 
+       
+
         round++;
         if (!isTie)
         {
             if (isPlayerOnesTurn) playerOne_Score++;
             else playerTwo_Score++;
         }
+
+        scoreText.text = "Score \n" + playerOne_Score + "|" + playerTwo_Score;
+
         if (playerOne_Score >= 3 || playerTwo_Score >= 3) return;
+
 
 
 

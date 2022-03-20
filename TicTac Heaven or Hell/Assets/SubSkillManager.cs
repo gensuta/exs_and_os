@@ -7,11 +7,18 @@ using TMPro;
 public class SubSkillManager : MonoBehaviour
 {
     [SerializeField] GameObject InventoryObject; // THIS IS A PANEL!!!
-    [SerializeField] Player player;
-    [SerializeField] GameObject subSkillPrefab, subSkillPanel;
+    [SerializeField] GameObject subSkillPrefab, subSkillPanel,subSkillsHolder;
     [SerializeField] LoadoutSkillUI[] loadoutSkills;
 
+
+    Player player;
+
     bool hasSpawnedSubskills;
+
+    private void Awake()
+    {
+        player = Player.Instance;
+    }
 
     public void OpenInventory()
     {
@@ -25,7 +32,7 @@ public class SubSkillManager : MonoBehaviour
 
         foreach(SubSkill s in player.inventory.unlockedSubSkills)
         {
-            GameObject g = Instantiate(subSkillPrefab, subSkillPanel.transform);
+            GameObject g = Instantiate(subSkillPrefab, subSkillsHolder.transform);
 
             SubSkillUI _s = g.GetComponent<SubSkillUI>();
             _s.mySkill = s;
